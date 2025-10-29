@@ -1,0 +1,61 @@
+:root {
+    --netflix-red: #E50914;
+}
+
+body {
+    background-color: #141414; /* Netflix dark background */
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+
+/* Custom scrollbar for horizontal rows */
+.carousel-row::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel-row::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 4px;
+}
+.carousel-row::-webkit-scrollbar-thumb {
+    background: var(--netflix-red);
+    border-radius: 4px;
+}
+.carousel-row::-webkit-scrollbar-thumb:hover {
+    background: #b20710;
+}
+
+/* Card hover effect */
+.show-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.show-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero gradient */
+.hero-gradient {
+    background-image: linear-gradient(to top, #141414, rgba(20, 20, 20, 0.5) 50%, rgba(20, 20, 20, 0) 100%);
+}
+
+.netflix-button {
+    background-color: var(--netflix-red);
+    transition: background-color 0.3s ease;
+}
+.netflix-button:hover {
+    background-color: #f6121d;
+}
+
+.secondary-button {
+    background-color: rgba(109, 109, 110, 0.7);
+    transition: background-color 0.3s ease;
+}
+.secondary-button:hover {
+    background-color: rgba(109, 109, 110, 0.4);
+}
+
+/* Modal styling */
+.modal {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.7);
+}

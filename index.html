@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisha's Dev-Flix | Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#141414] text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 px-4 sm:px-8 md:px-12 bg-gradient-to-b from-black/100 via-black/80 via-black/40 via-black/20 to-transparent">
+        <h1 class="text-3xl font-extrabold text-[#E50914] tracking-wider uppercase">Prisha</h1>
+        <a href="#contact" class="px-4 py-1 text-sm font-semibold bg-white text-black rounded-md hover:bg-gray-200 transition-colors sm:text-base sm:px-6 sm:py-2">Contact</a>
+    </header>
+
+    <!-- Hero Section ("About Me") -->
+    <section 
+        class="relative h-[80vh] min-h-[500px] md:h-screen flex items-end p-4 sm:p-8 md:p-12 text-white overflow-hidden"
+    >
+        <!-- Background image with multiple fallback options -->
+        <img 
+            id="hero-img" 
+            src="./assets/prishaHeroPic.png" 
+            alt="Prisha portrait" 
+            class="absolute inset-0 w-full h-full object-cover z-0"
+            onerror="if(this.src.indexOf('assets')>-1){this.src='pic1.jpg';console.log('Trying root path...')}else{this.src='https://placehold.co/1200x800/E50914/FFFFFF?text=Portfolio+Hero';console.log('Using placeholder...');}"
+        />
+
+        <div class="absolute inset-0  z-10"></div>
+
+        <div class="relative z-20 max-w-xl">
+    <h2 class="text-4xl md:text-6xl font-black uppercase tracking-wide text-black">Synopsis</h2>
+    <p class="mt-4 text-lg md:text-xl font-light leading-relaxed max-w-prose">
+      Hey there! I'm Prisha – a tech-loving, basketball-playing, food-experimenting, 
+      book-devouring student who accidentally fell into coding and never looked back. 
+      Welcome to my digital playground where bugs are features and errors are just 
+      surprise mechanics! 
+    </p>
+    <a href="#projects" 
+       class="inline-block px-8 py-3 mt-6 text-lg font-bold text-black bg-white rounded-md shadow-lg hover:bg-gray-200 transition-colors">
+      See My Work
+    </a>
+  </div>
+</section>
+
+
+
+    <!-- Main Content - The "Rows" -->
+    <main class="py-12 px-4 sm:px-8 md:px-12 space-y-16">
+
+        <!-- Row 1: "Prisha's Originals" (Projects) -->
+        <section id="projects">
+            <h2 class="text-3xl font-bold tracking-wide uppercase">Prisha's Originals</h2>
+            <p class="text-gray-400 text-lg mt-1 mb-4">A collection of code, chaos, and caffeine.</p>
+            
+            <div class="flex p-4 -ml-4 overflow-x-auto carousel-row space-x-6">
+                
+                <!-- Project 1 Card -->
+                <div class="flex-shrink-0 w-72 md:w-80 rounded-lg overflow-hidden bg-zinc-900 show-card">
+                    <!-- USER: Add your "Number Translator" project image here -->
+                    <img src="https://placehold.co/400x225/E50914/FFF?text=Number+Translator" alt="Number Translator" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/400x225/E50914/FFF?text=Project+Image'">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">The Number Translator</h3>
+                        <div class="flex mt-4 space-x-2">
+                            <a href="https://github.com/Prisha5718/Number-Translator" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 text-sm font-semibold text-center text-black bg-white rounded-md hover:bg-gray-200 transition-colors">GitHub</a>
+                            <button 
+                                data-modal-target="project-modal"
+                                data-title="The Number Translator"
+                                data-desc="Making numbers speak different languages! Built this because math in different bases is confusing, and I needed a cheat sheet."
+                                data-stack="HTML | CSS | JavaScript"
+                                class="flex-1 px-4 py-2 text-sm font-semibold text-center text-white rounded-md secondary-button">
+                                Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 Card -->
+                <div class="flex-shrink-0 w-72 md:w-80 rounded-lg overflow-hidden bg-zinc-900 show-card">
+                    <!-- USER: Add your "Resume Builder" project image here -->
+                    <img src="https://placehold.co/400x225/1E88E5/FFF?text=Resume+Builder" alt="Resume Builder" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/400x225/1E88E5/FFF?text=Project+Image'">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">The Self-Brag Generator</h3>
+                        <div class="flex mt-4 space-x-2">
+                            <a href="https://github.com/Prisha5718/Resume-Builder" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 text-sm font-semibold text-center text-black bg-white rounded-md hover:bg-gray-200 transition-colors">GitHub</a>
+                            <button 
+                                data-modal-target="project-modal"
+                                data-title="The Self-Brag Generator"
+                                data-desc="Turning achievements into PDFs since 2024! Created this so I can make resumes faster than I can get rejected."
+                                data-stack="HTML | CSS | JavaScript | html2canvas | jsPDF"
+                                class="flex-1 px-4 py-2 text-sm font-semibold text-center text-white rounded-md secondary-button">
+                                Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 Card -->
+                <div class="flex-shrink-0 w-72 md:w-80 rounded-lg overflow-hidden bg-zinc-900 show-card">
+                    <!-- USER: Add your "Employee Retention" project image here -->
+                    <img src="https://placehold.co/400x225/43A047/FFF?text=ML+Magic" alt="Employee Retention Analysis" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/400x225/43A047/FFF?text=Project+Image'">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">The Corporate Crystal Ball</h3>
+                        <div class="flex mt-4 space-x-2">
+                            <a href="https://github.com/Prisha5718/Employee-Retention-Analysis" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 text-sm font-semibold text-center text-black bg-white rounded-md hover:bg-gray-200 transition-colors">GitHub</a>
+                            <button 
+                                data-modal-target="project-modal"
+                                data-title="The Corporate Crystal Ball"
+                                data-desc="Predicting who's gonna quit before they know it! ML magic that reads minds (or just data)."
+                                data-stack="Python | Machine Learning | Scikit-learn | SVM"
+                                class="flex-1 px-4 py-2 text-sm font-semibold text-center text-white rounded-md secondary-button">
+                                Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 Card -->
+                <div class="flex-shrink-0 w-72 md:w-80 rounded-lg overflow-hidden bg-zinc-900 show-card">
+                    <!-- USER: Add your "Library Management" project image here -->
+                    <img src="https://placehold.co/400x225/FB8C00/FFF?text=Library+System" alt="Library Management System" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/400x225/FB8C00/FFF?text=Project+Image'">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">The Book Traffic Controller</h3>
+                        <div class="flex mt-4 space-x-2">
+                            <a href="https://github.com/Prisha5718/Library-Management-System" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 text-sm font-semibold text-center text-black bg-white rounded-md hover:bg-gray-200 transition-colors">GitHub</a>
+                            <button 
+                                data-modal-target="project-modal"
+                                data-title="The Book Traffic Controller"
+                                data-desc="Because someone needs to keep track of who's hoarding books! Java and databases having a party."
+                                data-stack="Java | MySQL | JDBC"
+                                class="flex-1 px-4 py-2 text-sm font-semibold text-center text-white rounded-md secondary-button">
+                                Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 Card -->
+                <div class="flex-shrink-0 w-72 md:w-80 rounded-lg overflow-hidden bg-zinc-900 show-card">
+                    <!-- USER: Add your "Paper Trail" project image here -->
+                    <img src="https://placehold.co/400x225/5E35B1/FFF?text=Paper+Trail" alt="Paper Trail" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/400x225/5E35B1/FFF?text=Project+Image'">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">The Document Stalker</h3>
+                        <div class="flex mt-4 space-x-2">
+                            <a href="https://github.com/Prisha5718/Paper-Trail" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 text-sm font-semibold text-center text-black bg-white rounded-md hover:bg-gray-200 transition-colors">GitHub</a>
+                            <button 
+                                data-modal-target="project-modal"
+                                data-title="The Document Stalker"
+                                data-desc="Following papers around the internet! Keeping tabs on stuff so you don't have to."
+                                data-stack="JavaScript"
+                                class="flex-1 px-4 py-2 text-sm font-semibold text-center text-white rounded-md secondary-button">
+                                Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Row 2: "The Arsenal" (Tech Skills) -->
+        <section>
+            <h2 class="text-3xl font-bold tracking-wide uppercase">The Arsenal</h2>
+            <p class="text-gray-400 text-lg mt-1 mb-4">My toolkit for building cool things (and breaking them).</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Skill 1: Frontend -->
+                <div class="bg-zinc-900 rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-[#E50914]">The "Make It Pretty" Trio</h3>
+                    <p class="mt-2 text-gray-300 font-semibold">HTML | CSS | JavaScript</p>
+                    <p class="mt-3 text-gray-400">
+                        Learned these so my ideas don't just *work*, they look drop-dead gorgeous while doing it. This is the difference between a text file and a blockbuster.
+                    </p>
+                </div>
+
+                <!-- Skill 2: Languages -->
+                <div class="bg-zinc-900 rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-[#E50914]">The "Do Stuff" Squad</h3>
+                    <p class="mt-2 text-gray-300 font-semibold">C | C++ | Java | Python</p>
+                    <p class="mt-3 text-gray-400">
+                        My magic wands. <strong class="text-white">C/C++</strong> to go fast, <strong class="text-white">Java</strong> to build stuff that won't die, and <strong class="text-white">Python</strong> for ML wizardry and getting things done yesterday.
+                    </p>
+                </div>
+
+                <!-- Skill 3: Tools -->
+                <div class="bg-zinc-900 rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-[#E50914]">The "Stay Sane" Kit</h3>
+                    <p class="mt-2 text-gray-300 font-semibold">Git | GitHub | Figma | VSCode</p>
+                    <p class="mt-3 text-gray-400">
+                        <strong class="text-white">Git</strong> is my time machine. <strong class="text-white">Figma</strong> is where I pretend to be a designer. <strong class="text-white">VSCode</strong> is my digital cockpit where 100 extensions are a feature, not a bug.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Row 3: "Beyond the Code" (Hobbies) -->
+        <section>
+            <h2 class="text-3xl font-bold tracking-wide uppercase">Beyond the Code</h2>
+            <p class="text-gray-400 text-lg mt-1 mb-4">What I do when I'm not staring at a semicolon.</p>
+            
+            <div class="flex p-4 -ml-4 overflow-x-auto carousel-row space-x-6">
+                
+                <!-- Hobby 1: Bowling -->
+                <div class="relative flex-shrink-0 w-72 h-96 md:w-80 rounded-lg overflow-hidden bg-zinc-900 show-card">
+                    
+                    <img src="assets\bb.jpg" alt="Bowling" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/320x440/F97316/FFF?text=Image+Failed'">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-2xl font-bold">Bowling</h3>
+                    </div>
+                </div>
+
+                <!-- Hobby 2: Cooking -->
+                <div class="relative flex-shrink-0 w-72 h-96 md:w-80 rounded-lg overflow-hidden bg-zinc-900 show-card">
+                    
+                    <img src="assets\foodpic.jpg" alt="Cooking" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/320x440/84CC16/FFF?text=Image+Failed'">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-2xl font-bold">Cooking</h3>
+                    </div>
+                </div>
+                
+                <!-- Hobby 3: dance -->
+                <div class="relative flex-shrink-0 w-72 h-96 md:w-80 rounded-lg overflow-hidden bg-zinc-900 show-card">
+                    
+                    <img src="assets\dance.jpg" alt="dance" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/320x440/3B82F6/FFF?text=Image+Failed'">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-2xl font-bold ">Dancing</h3>
+                    </div>
+                </div>
+
+                <!-- Hobby 4: Travelling -->
+                <div class="relative flex-shrink-0 w-72 h-96 md:w-80 rounded-lg overflow-hidden bg-zinc-900 show-card">
+                    
+                    <img src="assets\travel.jpg" alt="Travelling" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/320x440/EC4899/FFF?text=Image+Failed'">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-2xl font-bold">Travelling</h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="text-3xl font-bold tracking-wide uppercase">The Cast & Crew</h2>
+            <p class="text-gray-400 text-lg mt-1 mb-4">A.k.a. my friends</p>
+            <div class="flex p-4 -ml-4 overflow-x-auto carousel-row space-x-6">
+                <!-- USER: Add pictures of your friends here -->
+                <div class="relative flex-shrink-0 w-72 h-72 rounded-lg overflow-hidden show-card">
+                    <img src="assets\grp1.jpg" alt="Group 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/7C3AED/FFF?text=Image+Failed'">
+                </div>
+                <div class="relative flex-shrink-0 w-72 h-72 rounded-lg overflow-hidden  show-card">
+                    <img src="assets\grp2.jpg" alt="Group/ 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/DB2777/FFF?text=Image+Failed'">
+                </div>
+                <div class="relative flex-shrink-0 w-72 h-72 rounded-lg overflow-hidden  show-card">
+                    <img src="assets\grp3.jpg" alt="Group 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/16A34A/FFF?text=Image+Failed'">
+                </div>
+                <div class="relative flex-shrink-0 w-72 h-72 rounded-lg overflow-hidden  show-card">
+                    <img src="assets\grp4.jpg" alt="Group 4" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/D97706/FFF?text=Image+Failed'">
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer / "The Credits" -->
+    <footer id="contact" class="py-16 px-4 sm:px-8 md:px-12 text-center text-gray-400 border-t border-zinc-800">
+        <h2 class="text-3xl font-bold tracking-wide uppercase text-white mb-6">The Credits Scene</h2>
+        <p class="text-lg max-w-lg mx-auto mb-8">
+            Thanks for stopping by. Let's build something cool together (or just talk about me!!).
+        </p>
+        <div class="flex justify-center space-x-8">
+            <a href="https://github.com/Prisha5718" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" title="GitHub">
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+            </a>
+            <a href="mailto:prishk2110@gmail.com" class="text-gray-400 hover:text-white transition-colors" title="Email">
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" /><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" /></svg>
+            </a>
+        </div>
+        <p class="mt-12 text-sm">© 2025 | Directed by Prisha</p>
+    </footer>
+
+    <!-- Project Info Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal hidden">
+        <div class="bg-zinc-900 w-full max-w-lg rounded-lg shadow-xl overflow-hidden border border-zinc-700">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-4 border-b border-zinc-700">
+                <h3 id="modal-title" class="text-2xl font-bold text-white">Project Title</h3>
+                <button id="modal-close" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <!-- Content -->
+            <div class="p-6">
+                <p id="modal-desc" class="text-gray-300 text-lg mb-4">Project description goes here.</p>
+                <div class="border-t border-zinc-700 pt-4">
+                    <h4 class="font-semibold text-white mb-2">Tech Stack:</h4>
+                    <p id="modal-stack" class="text-gray-400">Tech stack goes here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>
